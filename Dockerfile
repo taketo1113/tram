@@ -102,7 +102,8 @@ RUN --mount=type=cache,target=/root/.cache \
     rm -f ${bert_data_dir}/${bert_model_localfile} && \
     rm -f ${bert_data_dir}/${bert_config_localfile} && \
     # Download NLTK data \
-    mkdir -p ${nltk_data_dir}/{corpora,tokenizers} && \
+    mkdir -p ${nltk_data_dir}/corpora && \
+    mkdir -p ${nltk_data_dir}/tokenizers && \
     curl -kJL -o ${nltk_data_dir}/tokenizers/${punkt_localfile} $punkt_url && \
     curl -kJL -o ${nltk_data_dir}/corpora/${omw_localfile} $omw_url && \
     curl -kJL -o ${nltk_data_dir}/corpora/${wordnet_localfile} $wordnet_url && \
